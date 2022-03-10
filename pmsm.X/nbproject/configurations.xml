@@ -84,7 +84,7 @@
     <conf name="default" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>dsPIC33CK256MP506</targetDevice>
+        <targetDevice>dsPIC33CDVC256MP506</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
@@ -93,7 +93,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="dsPIC33CK-MP_DFP" vendor="Microchip" version="1.6.176"/>
+        <pack name="dsPIC33CD-MP_DFP" vendor="Microchip" version="1.0.1"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
