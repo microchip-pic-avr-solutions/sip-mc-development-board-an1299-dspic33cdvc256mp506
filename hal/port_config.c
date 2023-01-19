@@ -264,9 +264,12 @@ void MapGPIOHWFunction(void)
     
     _CNPUC12 = 1; //Pull up resistor for DE2
     TRISBbits.TRISB13 = 0; // OE pin for driver
-    
+
      configureGateDriverFault();
-    
+    /*Configuring DE2 Pin*/
+     _U2RXR = 60;
+     _RP60R = 3; 
+     
 }
 void configureGateDriverFault(void)
 {

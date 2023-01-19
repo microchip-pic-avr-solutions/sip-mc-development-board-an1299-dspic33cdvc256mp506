@@ -489,7 +489,7 @@ void DoControl( void )
     None.
  */
 void __attribute__((__interrupt__,no_auto_psv)) _ADCInterrupt()
-{        
+{  
 #ifdef SINGLE_SHUNT 
     if (IFS4bits.PWM1IF ==1)
     {
@@ -764,7 +764,7 @@ void __attribute__ ((interrupt, no_auto_psv)) _CNBInterrupt(void)
     if(BSP_LATCH_GATE_DRIVER_A_FAULT == true)
     {
         LED1 = 0;
-        HAL_Board_Board_FaultClear();
+        HAL_Board_FaultClear();
     }
     CN_PortBInterruptFlagClear();
 }
