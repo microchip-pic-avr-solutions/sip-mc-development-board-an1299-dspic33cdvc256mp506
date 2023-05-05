@@ -306,7 +306,7 @@ static bool HAL_GateDriver_Initialize(GATE_DRIVER_OBJ *pGateDriver)
         
     pGateDriver->cmd2Data.byte = 0;
     pGateDriver->cmd2Data.blankingTime = GATE_DRIVER_BLANKING_4000nS;
-    pGateDriver->cmd2Data.deadTime = GATE_DRIVER_DEADTIME_1250nS;
+    pGateDriver->cmd2Data.deadTime = GATE_DRIVER_DEADTIME_250nS;
     
     /* Store Pointer to Host Interface structure */
     pGateDriver->pHostInterface = &gateDriverInterface[pGateDriver->gateDriverID];

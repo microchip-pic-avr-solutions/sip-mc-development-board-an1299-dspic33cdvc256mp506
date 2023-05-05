@@ -48,7 +48,7 @@ extern "C" {
 /* Single shunt algorithm defines *2 because is same resolution as PDCx registers */    							
 #define SSTCRIT         (uint16_t)(SSTCRITINSEC*FCY*2)  
 /* Single shunt algorithm defines *2 because is same resolution as PDCx registers */    							
-#define SS_SAMPLE_DELAY  100  
+#define SS_SAMPLE_DELAY  150  
     
  /* Description:
     This structure will host parameters related to measured currents

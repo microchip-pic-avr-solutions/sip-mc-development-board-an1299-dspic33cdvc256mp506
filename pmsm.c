@@ -157,6 +157,9 @@ int main ( void )
                 }
                 else
                 {
+                    /* Function call to charge Bootstrap capacitors*/
+                    ChargeBootstrapCapacitors();
+                    
                     EnablePWMOutputsInverterA();
                     uGF.bits.RunMotor = 1;
                     LED2 = 1;
