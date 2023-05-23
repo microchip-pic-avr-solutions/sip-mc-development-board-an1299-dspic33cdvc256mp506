@@ -147,7 +147,7 @@ int main ( void )
         {
             DiagnosticsStepMain();
             BoardService();
-  
+            // Monitoring for Button 1 press
             if (IsPressed_Button1())
             {
                 if  (uGF.bits.RunMotor == 1)
