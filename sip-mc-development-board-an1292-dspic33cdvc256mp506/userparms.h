@@ -59,7 +59,7 @@ constant slope. The slope is determined by TUNING_DELAY_RAMPUP constant.
  the software ramp implementing the speed increase has a constant slope, 
  adjusted by the delay TUNING_DELAY_RAMPUP when the speed is incremented.
  The potentiometer speed reference is overwritten. The speed is          
- increased from 0 up to the END_SPEED_RPM in open loop ? with the speed  
+ increased from 0 up to the END_SPEED_RPM in open loop – with the speed  
  increase typical to open loop, the transition to closed loop is done    
  and the software speed ramp reference is continued up to MAXIMUM_SPEED_RPM. */
 #undef TUNING
@@ -211,7 +211,7 @@ minimum value accepted */
    In flux weakening of the surface mounted permanent magnets
    PMSMs the mechanical damage of the rotor and the
    demagnetization of the permanent magnets is possible if
-   cautions measures are not taken or the motor?s producer
+   cautions measures are not taken or the motor’s producer
    specifications are not respected.
   -------------------------------------------------------------
    IMPORTANT:--------------------------------------------------
@@ -221,7 +221,7 @@ minimum value accepted */
    damaging the inverter is eminent. The reason is that the
    BEMF will have a greater value than the one that would be
    obtained for the nominal speed exceeding the DC bus voltage
-   value and though the inverter?s power semiconductors and DC
+   value and though the inverter’s power semiconductors and DC
    link capacitors would have to support it. Since the tuning
    proposed implies iterative coefficient corrections until
    the optimum functioning is achieved, the protection of the
