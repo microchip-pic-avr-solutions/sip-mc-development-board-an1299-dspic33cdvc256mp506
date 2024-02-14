@@ -70,9 +70,8 @@ constant slope. The slope is determined by TUNING_DELAY_RAMPUP constant.
     #define TUNING_DELAY_RAMPUP   0xF      
 #endif
 
-
-/* open loop continuous functioning */
-/* closed loop transition disabled  */
+/* define for open loop functioning */
+/* closed loop transition disabled if defined */
 #undef OPEN_LOOP_FUNCTIONING
 
 /* Definition for torque mode - for a separate tuning of the current PI
@@ -82,14 +81,12 @@ controllers, tuning mode will disable the speed PI controller */
 /* undef to work with dual Shunt  */    
 #define SINGLE_SHUNT 
 
+/* undef to work with External Op-Amp*/
 #define INTERNAL_OPAMP_CONFIG    
 
 /****************************** Motor Parameters ******************************/
 /********************  support xls file definitions begin *********************/
 /* The following values are given in the xls attached file */
-    
-    
-/*Update the following motor tuning parameters while using LVMC build configuration*/
     
 /* Motor's number of pole pairs */
 #define NOPOLESPAIRS 5
@@ -102,13 +99,19 @@ controllers, tuning mode will disable the speed PI controller */
 #define NORM_CURRENT_CONST     0.000671
 /* normalized ls/dt value */
 #define NORM_LSDTBASE 8129
+#define NORM_LSDTBASE_SCALE 8    /* 2^NORM_LSDTBASE_SCALE is the scaling */
+#define NORM_LSDTBASE_SCALE_SHIFT        (15- NORM_LSDTBASE_SCALE)
+#define NORM_LSDTBASE_FILT_SCALE_SHIFT   (15- NORM_LSDTBASE_SCALE + 3)   
 /* normalized rs value */
 #define NORM_RS  9044
+#define NORM_RS_SCALE       4   /* 2^NORM_RS_SCALE is the scaling */ 
+#define NORM_RS_SCALE_SHIFT         (15 - NORM_RS_SCALE) 
 /* the calculation of Rs gives a value exceeding the Q15 range so,
  the normalized value is further divided by 2 to fit the 32768 limit
  this is taken care in the estim.c where the value is implied
  normalized inv kfi at base speed */
 #define NORM_INVKFIBASE  7956
+#define NORM_INVKFIBASE_SCALE	1   /* 2^NORM_INVKFIBASE_SCALE is the scaling */ 
 /* the calculation of InvKfi gives a value which not exceed the Q15 limit
    to assure that an increase of the term with 5 is possible in the lookup table
    for high flux weakening the normalized is initially divided by 2
@@ -143,7 +146,7 @@ controllers, tuning mode will disable the speed PI controller */
  normally this value should not be modified, but in 
  case of fine tuning of the transition, depending on 
  the load or the rotor moment of inertia */
-#define INITOFFSET_TRANS_OPEN_CLSD 0x2000
+#define INITOFFSET_TRANS_OPEN_CLSD 0x0000
 
 /* current transformation macro, used below */
 #define NORM_CURRENT(current_real) (Q15(current_real/NORM_CURRENT_CONST/32768))

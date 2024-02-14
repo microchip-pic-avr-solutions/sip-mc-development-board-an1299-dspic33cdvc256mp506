@@ -8,7 +8,7 @@
     This file includes subroutine for initializing ADC Cores of Controller
 
   Description:
-    Definitions in the file are for dsPIC33CK256MP508 on Motor Control 
+    Definitions in the file are for dsPIC33CDVC256MP506 on Motor Control 
     Development board from Microchip
 
 *******************************************************************************/
@@ -230,18 +230,21 @@ void InitializeADCs (void)
        0 = Channel output data is unsigned    */
     /*ADMOD0L configures Output Data Sign for Analog inputs  AN0 to AN7 */
     ADMOD0L = 0x0000;
-    ADMOD0Lbits.SIGN0 = 1; //Ia
-    ADMOD0Lbits.SIGN1 = 1; //Ibus
-    ADMOD0Lbits.SIGN4 = 1; //Ib
+    /*Ia*/
+    ADMOD0Lbits.SIGN0 = 1; 
+    /*Ibus*/
+    ADMOD0Lbits.SIGN1 = 1; 
+    /*Ib*/
+    ADMOD0Lbits.SIGN4 = 1; 
    
     /*ADMOD0H configures Output Data Sign for Analog inputs  AN8 to AN15 */
     ADMOD0H = 0;   
-    ADMOD0Hbits.SIGN15 = 0; //POT
-    ADMOD0Hbits.SIGN12 = 0; //Vbus
+	/*POT*/
+    ADMOD0Hbits.SIGN15 = 0;
+    /*Vbus*/
+    ADMOD0Hbits.SIGN12 = 0; 
     ADMOD1L = 0;
-    
-
-    
+       
     /* Ensuring all interrupts are disabled and Status Flags are cleared */
     ADIEL = 0;
     ADIEH = 0;
@@ -293,8 +296,6 @@ void InitializeADCs (void)
     /* Common Interrupt Enable bits
        1 = Common and individual interrupts are enabled for analog channel
        0 = Common and individual interrupts are disabled for analog channel*/
-   
- 
     
 #ifdef SINGLE_SHUNT    
      _IE1        = 1 ;
@@ -320,19 +321,19 @@ void InitializeADCs (void)
         00100 = PMW1 Trigger 1
         00001 = Common software trigger
         00000 = No trigger is enabled  */
-    
 
 #ifdef SINGLE_SHUNT
-    /* Trigger Source for Analog Input #0  = 0b0101 */
+    /* Trigger Source for Analog Input #1  = 0b0101 for Ibus*/
     ADTRIG0Lbits.TRGSRC1 = 0x5;
 #else
-      /* Trigger Source for Analog Input #1  = 0b0100 */
+      /* Trigger Source for Analog Input #0  = 0b0100 for Ia */
     ADTRIG0Lbits.TRGSRC0 = 0x4;
-    /* Trigger Source for Analog Input #4  = 0b0100 */
+    /* Trigger Source for Analog Input #4  = 0b0100 for Ib */
     ADTRIG1Lbits.TRGSRC4 = 0x4;  
 #endif
+    /* Trigger Source for Analog Input #12  = 0b0100 for Vbus*/
     ADTRIG3Lbits.TRGSRC12 = 0x4;
-    /* Trigger Source for Analog Input #15  = 0b0100 */
+    /* Trigger Source for Analog Input #15  = 0b0100 for POT*/
     ADTRIG3Hbits.TRGSRC15 = 0x4;
     
 }

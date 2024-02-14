@@ -69,7 +69,6 @@
 #pragma config POSCMD = EC            // Primary Oscillator Mode Select bits (External oscillator)
 #pragma config OSCIOFNC = ON            // OSC2 Pin Function bit (OSC2 is general purpose digital I/O pin)
 #pragma config FCKSM = CSECMD           // Clock Switching Mode bits (Clock switching is enabled,Fail-safe Clock Monitor is disabled)
-//#pragma config PLLKEN = LOCK            // PLL Lock source select (Source for PLL Lock signal is lock detect)
 #pragma config XTCFG = G3               // XT Config (24-32 MHz crystals)
 #pragma config XTBST = DISABLE           // XT Boost (Boost the kick-start)
 
@@ -83,7 +82,6 @@
 
 // FPOR
 #pragma config BISTDIS = DISABLED       // Memory BIST Feature Disable (mBIST on reset feature disabled)
-//#pragma config BSSO = NORMAL            // Boot Space Start Option (Normal startup operation after reset, execute instruction at 0x000000)
 
 // FICD
 #pragma config ICS = PGD3               // ICD Communication Channel Select bits (Communicate on PGEC3 and PGED3)

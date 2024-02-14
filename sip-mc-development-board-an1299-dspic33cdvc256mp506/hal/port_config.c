@@ -10,7 +10,7 @@
     pins
 
   Description:
-    Definitions in the file are for dsPIC33CK256MP508 on Motor Control 
+    Definitions in the file are for dsPIC33CDVC256MP506 on Motor Control 
     Development board from Microchip
  
 *******************************************************************************/
@@ -265,7 +265,7 @@ void MapGPIOHWFunction(void)
     // SW2 : RP57/RC9
     TRISCbits.TRISC9 = 1; 
 	
-	/** Diagnostic Interface for LVMC Board etc.
+	/** Diagnostic Interface for Development Board
         Re-map UART Channels to the device pins connected to the following 
         PIM pins on the Motor Control Development Boards .
          */
