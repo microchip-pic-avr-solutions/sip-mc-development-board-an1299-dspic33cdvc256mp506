@@ -8,7 +8,7 @@
     This header file lists ADC Configuration related functions and definitions
 
   Description:
-    Definitions in the file are for dsPIC33CK256MP508 on Motor Control 
+    Definitions in the file are for dsPIC33CDVC256MP506 on Motor Control 
     Development board from Microchip
 
 *******************************************************************************/
@@ -73,24 +73,18 @@
 #define ADCBUF_SPEED_REF_A      ADCBUF15
 #define ADCBUF_VBUS_A           ADCBUF12
 
-
-/* This defines number of current offset samples for averaging 
- * If the 2^n samples are considered specify n(in this case 2^7(= 128)=> 7*/
-#define  CURRENT_OFFSET_SAMPLE_SCALER         7
 #ifdef SINGLE_SHUNT       
-#define EnableADCInterrupt()   _ADCAN1IE = 1
-#define DisableADCInterrupt()  _ADCAN1IE = 0
-#define ClearADCIF()           _ADCAN1IF = 0
-#define ClearADCIF_ReadADCBUF() ADCBUF1
-        
-#define _ADCInterrupt _ADCAN1Interrupt  
+    #define EnableADCInterrupt()   _ADCAN1IE = 1
+    #define DisableADCInterrupt()  _ADCAN1IE = 0
+    #define ClearADCIF()           _ADCAN1IF = 0
+    #define ClearADCIF_ReadADCBUF() ADCBUF1       
+    #define _ADCInterrupt _ADCAN1Interrupt  
 #else
-#define EnableADCInterrupt()   _ADCAN15IE = 1
-#define DisableADCInterrupt()  _ADCAN15IE = 0
-#define ClearADCIF()           _ADCAN15IF = 0
-#define ClearADCIF_ReadADCBUF() ADCBUF15
-        
-#define _ADCInterrupt _ADCAN15Interrupt  
+    #define EnableADCInterrupt()   _ADCAN15IE = 1
+    #define DisableADCInterrupt()  _ADCAN15IE = 0
+    #define ClearADCIF()           _ADCAN15IF = 0
+    #define ClearADCIF_ReadADCBUF() ADCBUF15   
+    #define _ADCInterrupt _ADCAN15Interrupt  
 #endif
         
 // *****************************************************************************

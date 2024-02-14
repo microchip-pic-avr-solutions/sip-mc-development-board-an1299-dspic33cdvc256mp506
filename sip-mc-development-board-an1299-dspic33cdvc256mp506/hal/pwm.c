@@ -9,7 +9,7 @@
     Fine Edge Placement 
 
   Description:
-    Definitions in the file are for dsPIC33CK256MP508 on Motor Control 
+    Definitions in the file are for dsPIC33CDVC256MP506 on Motor Control 
     Development board from Microchip
 
 *******************************************************************************/
@@ -676,9 +676,9 @@ void InitPWMGenerator1 (void)
     /* Initialize PWM GENERATOR 1 TRIGGER A REGISTER */
     PG1TRIGA     = ADC_SAMPLING_POINT;
     /* Initialize PWM GENERATOR 1 TRIGGER B REGISTER */
-    PG1TRIGB     = 0x0000;
+    PG1TRIGB     = LOOPTIME_TCY>>2;
     /* Initialize PWM GENERATOR 1 TRIGGER C REGISTER */
-    PG1TRIGC     = 0x0000;
+    PG1TRIGC     = LOOPTIME_TCY>>1;
     
 }
     

@@ -9,7 +9,7 @@
     Clock Output
 
   Description:
-    Definitions in the file are for dsPIC33CK256MP508 on Motor Control 
+    Definitions in the file are for dsPIC33CDVC256MP506 on Motor Control 
     Development board from Microchip
 
 *******************************************************************************/

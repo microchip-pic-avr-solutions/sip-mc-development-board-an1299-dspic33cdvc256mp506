@@ -10,15 +10,15 @@
       "shortDescription":"Sensorless Field Oriented Control of a PMSM with PLL Estimator and Single-Shunt Current Reconstruction Algorithm",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.05"
+         "semverRange":">=6.20"
       },
       "compiler":{
-         "name":"XC16",
-         "semverRange":">=2.00"
+         "name":"XC-DSC",
+         "semverRange":">=3.00"
       },
       "dfp":{
          "name":"dsPIC33CD-MP_DFP",
-         "semverRange":"=1.0.1"
+         "semverRange":"=1.2.151"
       },
 	  "configurator": {
          "name": "MCC",
